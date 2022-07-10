@@ -6,10 +6,10 @@ public class GroupDeletingTests extends TestBase {
 
   @Test
   public void testGroupDeleting() throws Exception {
-    app.gotoGroupPage();
-    app.selectGroup();
-    app.deleteSelectedGroup();
-    app.returnToGroupPafe();
+    app.getNavigationHelper().gotoGroupPage();
+    app.getGroupHelper().selectGroup();
+    app.getGroupHelper().deleteSelectedGroup();
+    app.getGroupHelper().returnToGroupPafe();
   }
 
 }

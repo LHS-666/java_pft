@@ -25,11 +25,11 @@ public class ApplicationManager {
 
     public void init() {
 
-        if (browser == CHROME) {
+        if (browser.equals(CHROME)) {
             wd = new ChromeDriver();
-        }  else if (browser == FIREFOX) {
+        }  else if (browser.equals(FIREFOX)) {
             wd = new ChromeDriver();
-        }  else if (browser == IE) {
+        }  else if (browser.equals(IE)) {
             wd = new InternetExplorerDriver();
         }
 

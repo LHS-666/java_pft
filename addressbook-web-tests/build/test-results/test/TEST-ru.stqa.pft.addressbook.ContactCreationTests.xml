@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.ContactCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-20T17:53:56" hostname="ОЛЕНЬКА-ПК" time="4.675">
+<testsuite name="ru.stqa.pft.addressbook.ContactCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-20T18:22:48" hostname="ОЛЕНЬКА-ПК" time="2.689">
   <properties/>
-  <testcase name="testContactCreation" classname="ru.stqa.pft.addressbook.ContactCreationTests" time="4.675"/>
+  <testcase name="testContactCreation" classname="ru.stqa.pft.addressbook.ContactCreationTests" time="2.689"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 103.0.5060.53 (a1711811edd74ff1cf2150f36ffa3b0dae40b17f-refs/branch-heads/5060@{#853}) on port 60852
+  <system-err><![CDATA[Starting ChromeDriver 103.0.5060.53 (a1711811edd74ff1cf2150f36ffa3b0dae40b17f-refs/branch-heads/5060@{#853}) on port 62008
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-июл. 20, 2022 9:53:55 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+июл. 20, 2022 10:22:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected upstream dialect: W3C
-июл. 20, 2022 9:53:56 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+июл. 20, 2022 10:22:47 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found exact CDP implementation for version 103
 ]]></system-err>
 </testsuite>

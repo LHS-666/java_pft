@@ -39,4 +39,14 @@ public class ContactHelper extends HelperBase {
     private String closeAlertAndGetItsText() {
       return null;
     }
+
+    public void initContactModification() {
+        // поправить на правильный локатор
+        click(By.id("11"));
+    }
+
+
+    public void submitContactModification() {
+        click(By.name("update"));
+    }
 }

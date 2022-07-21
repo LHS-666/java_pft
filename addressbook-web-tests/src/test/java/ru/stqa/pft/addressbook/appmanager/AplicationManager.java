@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-import static org.testng.Assert.assertTrue;
+
 
 public class AplicationManager {
 
@@ -29,9 +29,6 @@ public class AplicationManager {
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login("admin", "secret");
     }
-
-
-
     public void stop() {
         wd.quit();
     }
@@ -45,14 +42,7 @@ public class AplicationManager {
       }
     }
 
-    private boolean isAlertPresent() {
-      try {
-        wd.switchTo().alert();
-        return true;
-      } catch (NoAlertPresentException e) {
-        return false;
-      }
-    }
+
 
     public GroupHelper getGroupHelper() {
         return groupHelper;

@@ -13,8 +13,8 @@ public class NavigationHelper extends HelperBase {
     }
 
     public void gotoToHomePage() {
-      click(By.linkText("home page"));
-      wd.get("http://localhost/addressbook/index.php");
+      click(By.linkText("home"));
+
     }
 
     public void gotoNewContactPage() {

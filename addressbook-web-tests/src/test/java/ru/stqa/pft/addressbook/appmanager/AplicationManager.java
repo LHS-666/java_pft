@@ -36,7 +36,7 @@ public class AplicationManager {
             wd = new InternetExplorerDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         js = (JavascriptExecutor) wd;
         wd.get("http://localhost/addressbook/");
         navigationHelper = new NavigationHelper(wd);

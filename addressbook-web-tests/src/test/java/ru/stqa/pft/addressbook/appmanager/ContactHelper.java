@@ -2,6 +2,8 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import static org.testng.Assert.assertTrue;
@@ -16,11 +18,22 @@ public class ContactHelper extends HelperBase {
         click(By.name("submit"));
     }
 
-    public void fillContactForm(ContactData contactData) {
+    public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.name());
         type(By.name("lastname"), contactData.lastname());
         type(By.name("home"), contactData.phone());
         type(By.name("email"), contactData.email());
+
+        if (creation) {
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        } else {
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        }
+
+    }
+
+    public void gotoToHomePage() {
+        click(By.linkText("home page"));
     }
 
     public void initContactCreation() {
@@ -33,7 +46,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectContact() {
-        click(By.id("11"));
+        click(By.cssSelector("[]"));
     }
 
     private String closeAlertAndGetItsText() {
@@ -42,7 +55,7 @@ public class ContactHelper extends HelperBase {
 
     public void initContactModification() {
         // поправить на правильный локатор
-        click(By.id("11"));
+        click(By.cssSelector("img[alt='Edit']"));
     }
 
 

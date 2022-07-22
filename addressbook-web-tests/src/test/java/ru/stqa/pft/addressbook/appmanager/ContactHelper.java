@@ -7,6 +7,7 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import static org.testng.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class ContactHelper extends HelperBase {
 
@@ -43,10 +44,11 @@ public class ContactHelper extends HelperBase {
     public void deleteContact() {
         click(By.xpath("//input[@value='Delete']"));
         assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
+        //assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
     }
 
     public void selectContact() {
-        click(By.cssSelector("[]"));
+        click(By.name("selected[]"));
     }
 
     private String closeAlertAndGetItsText() {
@@ -54,12 +56,22 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initContactModification() {
-        // поправить на правильный локатор
+
         click(By.cssSelector("img[alt='Edit']"));
     }
 
 
     public void submitContactModification() {
         click(By.name("update"));
+    }
+
+    public void createContact(ContactData contact, boolean b) {
+        initContactCreation();
+        fillContactForm(contact,b);
+        submitContactCreation();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
     }
 }

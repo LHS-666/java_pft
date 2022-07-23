@@ -30,48 +30,40 @@ public class ContactHelper extends HelperBase {
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
-
     }
 
     public void gotoToHomePage() {
         click(By.linkText("home page"));
     }
-
     public void initContactCreation() {
         click(By.linkText("add new"));
     }
-
     public void deleteContact() {
         click(By.xpath("//input[@value='Delete']"));
         assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
         //assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
     }
-
     public void selectContact() {
         click(By.name("selected[]"));
     }
-
     private String closeAlertAndGetItsText() {
       return null;
     }
-
     public void initContactModification() {
-
         click(By.cssSelector("img[alt='Edit']"));
     }
-
-
     public void submitContactModification() {
         click(By.name("update"));
     }
-
     public void createContact(ContactData contact, boolean b) {
         initContactCreation();
         fillContactForm(contact,b);
         submitContactCreation();
     }
-
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
+    }
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
     }
 }

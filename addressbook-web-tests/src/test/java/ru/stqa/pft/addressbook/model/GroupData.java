@@ -1,19 +1,20 @@
 package ru.stqa.pft.addressbook.model;
 
-import org.openqa.selenium.By;
-
-public record GroupData(String id, String name, String header, String footer) {
+public record GroupData(int id, String name, String header, String footer) {
 
     @Override
     public String toString() {
         return "GroupData{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
     }
 
-    
-    public String getId() {
+
+    public int getId() {
+        return id;
+    }
+    public int setId(int max) {
         return id;
     }
 
@@ -24,16 +25,18 @@ public record GroupData(String id, String name, String header, String footer) {
 
         GroupData groupData = (GroupData) o;
 
-        if (id != null ? !id.equals(groupData.id) : groupData.id != null) return false;
+        if (id != groupData.id) return false;
         return name != null ? name.equals(groupData.name) : groupData.name == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
+        int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
     }
+
+
 
 
 }

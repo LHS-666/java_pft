@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,34 +39,43 @@ public class ContactHelper extends HelperBase {
     public void gotoToHomePage() {
         click(By.linkText("home page"));
     }
+
     public void initContactCreation() {
         click(By.linkText("add new"));
     }
+
     public void deleteContact() {
         click(By.xpath("//input[@value='Delete']"));
         assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
         //assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
     }
+
     public void selectContact(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
+
     private String closeAlertAndGetItsText() {
-      return null;
+        return null;
     }
+
     public void initContactModification() {
         click(By.cssSelector("img[alt='Edit']"));
     }
+
     public void submitContactModification() {
         click(By.name("update"));
     }
+
     public void createContact(ContactData contact, boolean b) {
         initContactCreation();
-        fillContactForm(contact,b);
+        fillContactForm(contact, b);
         submitContactCreation();
     }
+
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
     }
+
     public int getContactCount() {
         return wd.findElements(By.name("selected[]")).size();
     }

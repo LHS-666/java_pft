@@ -14,7 +14,7 @@ public class GroupModificationTests extends TestBase {
         app.getNavigationHelper().gotoGroupPage();
 
         if (app.getGroupHelper().isTheAGroup()) {
-            app.getGroupHelper().createGroup(new GroupData(0,"test1", null, null));
+            app.getGroupHelper().createGroup(new GroupData("test1", null, null));
         }
         List<GroupData> before = app.getGroupHelper().getGroupList();
         app.getGroupHelper().selectGroup(before.size() - 1);
